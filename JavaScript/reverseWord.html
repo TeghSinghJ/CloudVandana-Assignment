@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Reverse a given word | Assignment 1</title>
+</head>
+<body>
+<b>Reversed Sentence </b> <p id="result">None<p>
+</body>
+<script>
+function reverseWords(sentence) {
+    let reversedSentence = "";
+    let word = "";
+    let isWordComplete = false;
+
+    for (let i = 0; i < sentence.length; i++) {
+        let char = sentence[i];
+
+        if (char !== " ") {
+            word = char + word; 
+            isWordComplete = false;
+        } else {
+            
+            isWordComplete = true;
+        }
+
+        // If the word is complete or it's the last word in the sentence
+        if (isWordComplete || i === sentence.length - 1) {
+            reversedSentence = reversedSentence + (word.charAt(0).toUpperCase() + word.slice(1)) + " ";
+            word = ""; 
+        }
+    }
+
+    return reversedSentence.trim(); // Trim to remove trailing space
+}
+
+
+let inputSentence = prompt("Enter a sentence: ");
+let reversedSentence = reverseWords(inputSentence.toLowerCase());
+//Check the browser's console
+console.log("Reversed Sentence: " + reversedSentence);
+document.getElementById("result").innerHTML = reversedSentence;
+//I am also adding a 'p' element where the reversed sentence will be displayed.
+</script>
+</html>

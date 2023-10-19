@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Calculator</title>
+    <style>
+        body {
+            background: #7CB9E8;
+        }
+
+        form {
+            text-align: center;
+            margin: 0;
+        }
+
+        input[type="text"] {
+            background: #bccd95;
+            position: relative;
+            width: 250px;
+            height: 40px;
+            font-size: 21px;
+        }
+
+        input[type="button"] {
+            width: 60px;
+            height: 60px;
+            font-size: 21px;
+            border-radius: 10px;
+        }
+
+        .op {
+            background: #696969;
+        }
+
+        .ac {
+            background: tomato;
+        }
+
+        .eq {
+            background: #1877F2;
+        }
+
+        .box {
+            background: #3d4543;
+            height: 400px;
+            width: 350px;
+            margin: auto;
+            padding-top: 20px;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        function displ(val) {
+            document.getElementById("display").value += val;
+        }
+        function clr() {
+            document.getElementById("display").value = ""
+        }
+        function solve() {
+            x = document.getElementById("display").value;
+            y = eval(x);
+            document.getElementById("display").value = y;
+        }
+        function enab() {
+            document.getElementById("display").disabled = false;
+        }
+        function di() {
+            document.getElementById("display").disabled = true
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1>CALCULATOR</h1>
+    </center>
+    <form class="box">
+        <input type="text" value="" id="display" disabled class="box_diplay"><br><br><br>
+        <input type="button" value="Off" id="" onclick="di()">
+        <input type="button" value="/" class="op" id="" onclick="displ('/')">
+        <input type="button" value="Clr" id="" onclick="clr()">
+        <input type="button" value="AC" class="ac" id="" onclick="enab()"><br>
+        <input type="button" value="7" id="" onclick="displ('7')" />
+        <input type="button" value="8" id="" onclick="displ('8')">
+        <input type="button" value="9" id="" onclick="displ('9')">
+        <input type="button" value="+" class="op" onclick="displ('+')"><br>
+        <input type="button" value="6" id="" onclick="displ('6')">
+        <input type="button" value="5" id="" onclick="displ('5')">
+        <input type="button" value="4" id="" onclick="displ('4')">
+        <input type="button" value="-" class="op" onclick="displ('-')"><br>
+        <input type="button" value="3" id="" onclick="displ('3')">
+        <input type="button" value="2" id="" onclick="displ('2')">
+        <input type="button" value="1" id="" onclick="displ('1')">
+        <input type="button" value="*" class="op" onclick="displ('*')"><br>
+        <input type="button" value="." id="" onclick="displ('.')">
+        <input type="button" value="0" id="" onclick="displ('0')">
+        <input type="button" value="%" class="op" onclick="displ('%')">
+        <input type="button" value="=" class="eq" onclick="solve()">
+    </form><br>
+    <div align="right"><i><b>Designed By :Juni Tegh Singh</b></i></div>
+</body>
+
+</html>
